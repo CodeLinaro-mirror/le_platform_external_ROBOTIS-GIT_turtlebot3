@@ -169,7 +169,7 @@ local_costmap:
       width: 3
       height: 3
       resolution: 0.05
-      robot_radius: 0.11
+      robot_radius: 0.15
       plugins: ["obstacle_layer", "voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -217,7 +217,7 @@ global_costmap:
       global_frame: map
       robot_base_frame: base_link
       transform_tolerance: 1.0
-      robot_radius: 0.22
+      robot_radius: 0.15
       resolution: 0.05
       track_unknown_space: true
       plugins: ["static_layer", "obstacle_layer", "voxel_layer", "inflation_layer"]
@@ -308,7 +308,7 @@ recoveries_server:
 
 waypoint_follower:
   ros__parameters:
-    loop_rate: 200
+    loop_rate: 20
     stop_on_failure: false
     waypoint_task_executor_plugin: "wait_at_waypoint"
     wait_at_waypoint:
