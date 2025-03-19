@@ -169,12 +169,12 @@ local_costmap:
       width: 3
       height: 3
       resolution: 0.05
-      robot_radius: 0.22
+      robot_radius: 0.11
       plugins: ["obstacle_layer", "voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         inflation_radius: 0.5
-        cost_scaling_factor: 2.0
+        cost_scaling_factor: 5.0
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: true
@@ -261,8 +261,8 @@ global_costmap:
         transform_tolerance: 0.1
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
         inflation_radius: 0.5
+        cost_scaling_factor: 5.0
       always_send_full_costmap: true
 
 map_server:
@@ -340,7 +340,7 @@ collision_monitor:
       enabled: true
     PolygonSlow:
       type: "polygon"
-      points: "[[0.2, 0.2], [0.2, -0.2], [-0.2, -0.2], [-0.0, 0.2]]"
+      points: "[[0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1]]"
       action_type: "slowdown"
       min_points: 4
       slowdown_ratio: 0.3
@@ -349,7 +349,7 @@ collision_monitor:
       enabled: true
     PolygonLimit:
       type: "polygon"
-      points: "[[0.2, 0.2], [0.2, -0.2], [-0.2, -0.2], [-0.2, 0.2]]"
+      points: "[[0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1]]"
       action_type: "limit"
       min_points: 4
       linear_limit: 0.4
